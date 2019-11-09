@@ -1,4 +1,4 @@
-package arithmetic
+package arithmetic_models
 
 import "fmt"
 

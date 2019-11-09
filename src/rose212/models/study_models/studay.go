@@ -1,9 +1,19 @@
-package study
+package study_models
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/gin-gonic/gin"
+)
+
+
+//只有models层是没有绑定接受者的
+//都是以接受者的身份进来函数
+//在models层实现的
+
+
 
 //实现对切片的增删改查
-func Go切片的增删改查() {
+func Go切片的增删改查(c *gin.Context) {
 	var slice = []int{1, 99, 88, 77}
 	//方式一:初始化增加或者指定下标进行增加/替换
 	//slice[4] = 111  Todo  错误的写法  只有append才可以进行自动扩容
