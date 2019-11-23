@@ -12,7 +12,7 @@ type IGoABC interface {
 	GoABC(ctx *gin.Context)
 }
 
-//实现这个接口
+//实现这个接口  这个是一个对象
 type User struct {
 	//这个对象进来的  找到的其他的对象
 	//直接继承
@@ -23,6 +23,7 @@ type User struct {
 func (u *User) StarRoute(c *gin.Engine) {
 	HTTP := c.Group("/golang/studay")
 	HTTP.GET("/1", u.GoABC)
+	HTTP.GET("/2", u.ProducterConsumer)
 
 }
 
@@ -30,6 +31,21 @@ func (u *User) StarRoute(c *gin.Engine) {
 func (u *User) GoABC(c *gin.Context) {
 	u.Go.GoABC(c)
 }
+//生产者 消费者
+func(u  *User) ProducterConsumer(c  *gin.Context){
+	u.Go.ProducterConsumer(c)
+}
+//都要在这里展示出来一个接口
+
+
+//还是从对象继承的对象上分叉出去  实现各自的代码业务逻辑
+
+
+//都需要一个接口进行调用
+
+
+
+
 
 /*
 

@@ -30,3 +30,12 @@ func (*Go) GoABC(c *gin.Context) {
 	)
 	return
 }
+
+//生产者消费者
+func (*Go) ProducterConsumer(c *gin.Context) {
+	chanC := make(chan int, 3) //开辟了一块空间罢了  缓冲区
+	go study_models.Producter(chanC)
+	study_models.Consumer(chanC) //对同一份缓冲区进行操作
+}
+
+//
